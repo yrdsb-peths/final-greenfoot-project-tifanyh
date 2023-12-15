@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Dinosaur here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Tiffany Ho 
+ * @version December 15 2023
  */
 public class Dinosaur extends Actor
 {
