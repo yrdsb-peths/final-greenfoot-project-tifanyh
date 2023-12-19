@@ -12,19 +12,42 @@ public class Dinosaur extends Actor
      * Act - do whatever the Dinosaur wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    private static final int JUMP_STRENGTH = 15;
+    private int ySpeed = 0;
+
+    GreenfootImage[] idleRight = new GreenfootImage[48];
+    GreenfootImage[] idleLeft = new GreenfootImage[48];
     
-    String facing = "right";    
+    //Constructor 
+    public Dinosaur()
+    {
+        
+    }
+
     public void act()
     {
-            if(Greenfoot.isKeyDown("up"))
-            {
-                move(-3);
-                facing = "up";
-            }
-            else if(Greenfoot.isKeyDown("down"))
-            {
-                move(3);
-                facing = "down";
-            }
+        jump();
+    }
+    
+    private void jump()
+    {
+        if (Greenfoot.isKeyDown("up") && onGround())
+        {
+            ySpeed = -JUMP_STRENGTH;
+        }
+
+        // Gravity effect
+        if (!onGround())
+        {
+            ySpeed += 1;
+        }
+
+        setLocation(getX(), getY() + ySpeed);
+    }
+    
+    private boolean onGround()
+    {
+        // Customize this method based on your world setup
+        return getY() >= getWorld().getHeight() - 1;
     }
 }
