@@ -1,6 +1,6 @@
 #Greenfoot project file
 class.Dinosaur.image=hippo.png
-class.Floor.image=1_ENycPFvoQXw4s4i56Kju7Q.gif
+class.Floor.image=offline-sprite-2x.png
 class.MyWorld.image=29cd5d9310ae0f771ef24abe5c467927.jpg
 class.cactus.image=tile002.png
 dependency1.from=MyWorld
@@ -10,8 +10,8 @@ dependency2.from=MyWorld
 dependency2.to=Floor
 dependency2.type=UsesDependency
 editor.fx.0.height=642
-editor.fx.0.width=813
-editor.fx.0.x=536
+editor.fx.0.width=792
+editor.fx.0.x=557
 editor.fx.0.y=202
 height=780
 package.numDependencies=2

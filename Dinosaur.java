@@ -18,7 +18,7 @@ public class Dinosaur extends Actor
     GreenfootImage[] idleRight = new GreenfootImage[48];
     GreenfootImage[] idleLeft = new GreenfootImage[48];
     
-    //Constructor 
+    //Constructor
     public Dinosaur()
     {
         
@@ -31,7 +31,7 @@ public class Dinosaur extends Actor
     
     private void jump()
     {
-        if (Greenfoot.isKeyDown("up") && onGround())
+        if (Greenfoot.isKeyDown("space") && onGround())
         {
             ySpeed = -JUMP_STRENGTH;
         }
