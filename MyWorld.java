@@ -29,7 +29,6 @@ public class MyWorld extends World
         Dinosaur dinosaur = new Dinosaur();
         addObject(dinosaur,110,327);
         Floor floor = new Floor();
-        addObject(floor,299,312);
-        
+        addObject(floor,300,327);
     }
 }
