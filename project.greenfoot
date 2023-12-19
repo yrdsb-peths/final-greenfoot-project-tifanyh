@@ -1,10 +1,11 @@
 #Greenfoot project file
 class.Dinosaur.image=png
+class.MyWorld.image=blank-white-background-xbsfzsltjksfompa.jpg
 class.cactus.image=tile002.png
-editor.fx.0.height=642
-editor.fx.0.width=813
-editor.fx.0.x=155
-editor.fx.0.y=118
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
 height=780
 package.numDependencies=0
 package.numTargets=3
