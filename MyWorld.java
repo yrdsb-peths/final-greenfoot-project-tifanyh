@@ -19,6 +19,7 @@ public class MyWorld extends World
         super(600, 400, 1);
         prepare();
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -27,5 +28,8 @@ public class MyWorld extends World
     {
         Dinosaur dinosaur = new Dinosaur();
         addObject(dinosaur,110,327);
+        Floor floor = new Floor();
+        addObject(floor,299,312);
+        
     }
 }
