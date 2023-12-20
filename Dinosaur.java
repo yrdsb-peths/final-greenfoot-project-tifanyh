@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Dinosaur here.
+ * This class create the dinosaur idle and its actions.
  * 
  * @author Tiffany Ho 
  * @version December 15 2023
@@ -17,8 +17,11 @@ public class Dinosaur extends Actor
     private static final int GRAVITY = 1;
     private static final int GROUND_LEVEL = 100;
 
-    GreenfootImage[] idleRight = new GreenfootImage[48];
-    GreenfootImage[] idleLeft = new GreenfootImage[48];
+    GreenfootImage[] idleDead = new GreenfootImage[8];
+    GreenfootImage[] idle = new GreenfootImage[10];
+    GreenfootImage[] idleJump = new GreenfootImage[12];
+    GreenfootImage[] idleRun = new GreenfootImage[8];
+    GreenfootImage[] idleWalk = new GreenfootImage[10];
     
     //Constructor
     public Dinosaur()
@@ -46,7 +49,6 @@ public class Dinosaur extends Actor
 
         setLocation(getX(), Math.min(getWorld().getHeight() - GROUND_LEVEL, getY() + ySpeed));
     }
-    
     private boolean onGround()
     {
         return getY() >= getWorld().getHeight() - GROUND_LEVEL;
