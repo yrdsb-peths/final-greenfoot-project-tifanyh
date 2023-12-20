@@ -28,8 +28,11 @@ public class MyWorld extends World
     {
         Dinosaur dinosaur = new Dinosaur();
         addObject(dinosaur,110,327);
+    }
+    
+    public void createFloor()
+    {
         Floor floor = new Floor();
-        addObject(floor,300,327);
-        removeObject(floor);
+        addObject(floor,0, getHeight() - 100);
     }
 }
