@@ -12,9 +12,9 @@ public class Dinosaur extends Actor
      * Act - do whatever the Dinosaur wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private static final int JUMP_STRENGTH = 30; //how high the elephant jumps
+    private static final int JUMP_STRENGTH = 15; //how high the elephant jumps
     private int ySpeed = 0;
-    private static final int GRAVITY = 5;
+    private static final int GRAVITY = 1;
     private static final int GROUND_LEVEL = 100;
 
     GreenfootImage[] idleRight = new GreenfootImage[48];
