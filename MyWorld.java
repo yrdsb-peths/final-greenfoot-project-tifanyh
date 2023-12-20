@@ -27,7 +27,10 @@ public class MyWorld extends World
     private void prepare()
     {
         Dinosaur dinosaur = new Dinosaur();
-        addObject(dinosaur,110,327);
+        addObject(dinosaur,100,327);
+        Floor floor = new Floor();
+        addObject(floor,259,348);
+        floor.setLocation(300,355);
     }
     
     public void createFloor()
