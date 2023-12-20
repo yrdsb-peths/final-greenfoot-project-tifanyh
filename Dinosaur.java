@@ -12,8 +12,10 @@ public class Dinosaur extends Actor
      * Act - do whatever the Dinosaur wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private static final int JUMP_STRENGTH = 15;
+    private static final int JUMP_STRENGTH = 30; //how high the elephant jumps
     private int ySpeed = 0;
+    private static final int GRAVITY = 5;
+    private static final int GROUND_LEVEL = 100;
 
     GreenfootImage[] idleRight = new GreenfootImage[48];
     GreenfootImage[] idleLeft = new GreenfootImage[48];
@@ -39,15 +41,14 @@ public class Dinosaur extends Actor
         // Gravity effect
         if (!onGround())
         {
-            ySpeed += 1;
+            ySpeed += GRAVITY;
         }
 
-        setLocation(getX(), getY() + ySpeed);
+        setLocation(getX(), Math.min(getWorld().getHeight() - GROUND_LEVEL, getY() + ySpeed));
     }
     
     private boolean onGround()
     {
-        // Customize this method based on your world setup
-        return getY() >= getWorld().getHeight() - 1;
+        return getY() >= getWorld().getHeight() - GROUND_LEVEL;
     }
 }
