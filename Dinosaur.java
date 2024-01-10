@@ -36,7 +36,6 @@ public class Dinosaur extends Actor
         }
         
         setImage(idleRun[0]);
-
     }
     
     public void animateDinosaurRun()
