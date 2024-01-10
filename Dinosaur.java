@@ -32,7 +32,7 @@ public class Dinosaur extends Actor
         for(int i = 1; i < idleRun.length; i++)
         {
             idleRun[i] = new GreenfootImage("images/dinosaur_idle/Run (" + i + ").png");
-            idleRun[i].scale(600,200);
+            idleRun[i].scale(100,100);
         }
         
         setImage(idleRun[0]);
