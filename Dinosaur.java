@@ -23,14 +23,44 @@ public class Dinosaur extends Actor
     GreenfootImage[] idleRun = new GreenfootImage[8];
     GreenfootImage[] idleWalk = new GreenfootImage[10];
     
+    private int animationFrame = 0;
+    private int animationDelay = 5; 
+    
     //Constructor
     public Dinosaur()
     {
+        for(int i = 1; i < idleRun.length; i++)
+        {
+            idleRun[i] = new GreenfootImage("images/dinosaur_idle/Run (" + i + ").png");
+            idleRun[i].scale(600,200);
+        }
         
+        setImage(idleRun[0]);
+
+    }
+    
+    public void animateDinosaurRun()
+    {
+        if (Greenfoot.isKeyDown("right"))
+        {
+            // Change the animation frame every few acts
+            if (animationFrame % animationDelay == 0)
+            {
+                setImage(idleRun[animationFrame / animationDelay % idleRun.length]);
+            }
+            animationFrame++;
+        }
+        else
+        {
+            // If not moving, display the first frame of the running animation
+            setImage(idleRun[0]);
+            animationFrame = 0;
+        }
     }
 
     public void act()
     {
+        animateDinosaurRun();
         jump();
     }
     
