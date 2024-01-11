@@ -21,7 +21,6 @@ public class Dinosaur extends Actor
     GreenfootImage[] idle = new GreenfootImage[10];
     GreenfootImage[] idleJump = new GreenfootImage[12];
     GreenfootImage[] idleRun = new GreenfootImage[8];
-    GreenfootImage[] idleWalk = new GreenfootImage[10];
     
     private int animationFrame = 0;
     private int animationDelay = 5; 
@@ -57,6 +56,7 @@ public class Dinosaur extends Actor
         }
     }
 
+
     public void act()
     {
         animateDinosaurRun();
@@ -65,7 +65,7 @@ public class Dinosaur extends Actor
     
     private void jump()
     {
-        if (Greenfoot.isKeyDown("space") && onGround())
+        if (Greenfoot.isKeyDown("up") && onGround())
         {
             ySpeed = -JUMP_STRENGTH;
         }

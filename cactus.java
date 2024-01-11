@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class cactus here.
+ * Cactus is the enemy object.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Tiffany Ho) 
+ * @version (January 11 2024)
  */
 public class cactus extends Actor
 {

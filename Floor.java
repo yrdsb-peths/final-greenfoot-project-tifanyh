@@ -31,15 +31,18 @@ public class Floor extends Actor
     
     public void animateFloor()
     {
-        if(animationCounter == animationDelay)
+        if(Greenfoot.isKeyDown("right"))
         {
-            setImage(floorIdle[imageIndex]);
-            imageIndex = (imageIndex + 1) % floorIdle.length;
-            animationCounter = 0;
-        }
-        else
-        {
-            animationCounter++;
+            if(animationCounter == animationDelay)
+            {
+                setImage(floorIdle[imageIndex]);
+                imageIndex = (imageIndex + 1) % floorIdle.length;
+                animationCounter = 0;
+            }
+            else
+            {
+                animationCounter++;
+            }
         }
     }
     
