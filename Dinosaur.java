@@ -35,7 +35,7 @@ public class Dinosaur extends Actor
             idleRun[i].scale(100,70);
         }
         
-        setImage(idleRun[0]);
+        setImage(idleRun[1]);
     }
     
     public void animateDinosaurRun()
@@ -52,7 +52,7 @@ public class Dinosaur extends Actor
         else
         {
             // If not moving, display the first frame of the running animation
-            setImage(idleRun[0]);
+            setImage(idleRun[1]);
             animationFrame = 0;
         }
     }
