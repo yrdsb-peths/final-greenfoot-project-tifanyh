@@ -46,8 +46,9 @@ public class TitleScreen extends World
         addObject(label3,300,268);
 
         Dinosaur dinosaur = new Dinosaur();
-        addObject(dinosaur,300,180);
+        addObject(dinosaur,300,170);
+        
         Floor floor = new Floor();
-        addObject(floor,299,35);
+        addObject(floor,299,30);
     }
 }
