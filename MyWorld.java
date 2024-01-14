@@ -50,7 +50,6 @@ public class MyWorld extends World
     public void createCactus()
     {
         Cactus cactus = new Cactus();
-        cactus.setSpeed(level);
         int x = 600;
         int y = 190;
         addObject(cactus, x, y);

@@ -11,7 +11,7 @@ public class Floor extends Actor
     GreenfootImage[] floorIdle = new GreenfootImage[53];
     int imageIndex = 0;
     int animationCounter = 0;
-    int animationDelay = 3;
+    int animationDelay = 4;
     
     /**
      * Act - do whatever the Floor wants to do. This method is called whenever
