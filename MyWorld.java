@@ -6,9 +6,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author Tiffany Ho
  * @version December 11 2023
  */
+
 public class MyWorld extends World
 {
-
+    int level = 1;
+    SimpleTimer cactusTimer = new SimpleTimer();
+    boolean gameIsOver = false;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -26,10 +30,45 @@ public class MyWorld extends World
      */
     private void prepare()
     {
+        createDinosaur();
+        createFloor();
+        createCactus();
+    }
+    
+    public void createDinosaur()
+    {
         Dinosaur dinosaur = new Dinosaur();
         addObject(dinosaur,100,200);
+    }
+    
+    public void createFloor()
+    {
         Floor floor = new Floor();
         addObject(floor,300,220);
-
+    }
+    
+    public void createCactus()
+    {
+        Cactus cactus = new Cactus();
+        cactus.setSpeed(level);
+        int x = 600;
+        int y = 190;
+        addObject(cactus, x, y);
+    }
+    
+    public void gameOver()
+    {
+        Label gameOverLabel = new Label("Game Over", 100);
+        addObject(gameOverLabel, 300, 200);
+        gameIsOver = true;
+    }
+    
+    public void act() {
+        if(!gameIsOver) {
+            if(cactusTimer.millisElapsed() > 3000){
+                cactusTimer.mark();
+                createCactus();
+            }
+        }
     }
 }

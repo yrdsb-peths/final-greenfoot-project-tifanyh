@@ -78,8 +78,19 @@ public class Dinosaur extends Actor
 
         setLocation(getX(), Math.min(getWorld().getHeight() - GROUND_LEVEL, getY() + ySpeed));
     }
+    
     private boolean onGround()
     {
         return getY() >= getWorld().getHeight() - GROUND_LEVEL;
+    }
+    
+    public void touchCactus()
+    {
+        if(isTouching(Cactus.class))
+        {
+            removeTouching(Cactus.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createCactus();
+        }
     }
 }
