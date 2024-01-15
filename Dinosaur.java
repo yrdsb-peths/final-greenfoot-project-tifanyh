@@ -89,7 +89,6 @@ public class Dinosaur extends Actor
     {
         if(isTouching(Cactus.class))
         {
-            removeTouching(Cactus.class);
             MyWorld world = (MyWorld) getWorld();
             world.createCactus();
         }

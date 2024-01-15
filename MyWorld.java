@@ -70,4 +70,9 @@ public class MyWorld extends World
             }
         }
     }
+    
+    public void score()
+    {
+                
+    }
 }

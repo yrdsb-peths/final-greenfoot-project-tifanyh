@@ -36,7 +36,7 @@ public class TitleScreen extends World
     
     private void prepare()
     {
-        Label label2 = new Label("Use \u2190 and \u2192 to Move", 20);
+        Label label2 = new Label("Use \u2192 to Move", 20);
         addObject(label2,300,270);
 
         Label label = new Label("Press <space> to start the game", 20);
