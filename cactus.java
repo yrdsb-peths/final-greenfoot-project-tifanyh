@@ -13,6 +13,7 @@ public class Cactus extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     GreenfootImage[] cacti = new GreenfootImage[4];
+    
     int cactusSpeed = 5;
     int imageIndex = 0;
     int animationCounter = 0;
@@ -34,7 +35,9 @@ public class Cactus extends Actor
         int x = getX();
         int y = getY();
         setLocation(x, y);
-        
-        move(-5);
+        if(Greenfoot.isKeyDown("right"))
+        {
+          move(-5); 
+        }
     }
 }
