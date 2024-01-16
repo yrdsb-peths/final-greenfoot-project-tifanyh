@@ -56,14 +56,20 @@ public class MyWorld extends World
         
     }
     
+    public boolean isGameOver()
+    {
+        return gameIsOver;
+    }
+    
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 100);
         
         Label restartLabel = new Label("press space to restart", 30);
-        addObject(restartLabel, 300, 120);
+        addObject(restartLabel, 300, 150);
         gameIsOver = true;
+        cactusTimer.mark();
     }
     
     public void act() 
