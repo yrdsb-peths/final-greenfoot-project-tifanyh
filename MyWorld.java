@@ -53,32 +53,44 @@ public class MyWorld extends World
         int x = 600;
         int y = 190;
         addObject(cactus, x, y);
+        
     }
     
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 100);
+        
+        Label restartLabel = new Label("press space to restart", 30);
+        addObject(restartLabel, 300, 120);
         gameIsOver = true;
     }
     
     public void act() 
     {
-        if (!gameIsOver) 
+        if(gameIsOver)
         {
-            if (cactusTimer.millisElapsed() > 1000) 
+            if(Greenfoot.isKeyDown("space"))
             {
-                cactusTimer.mark();
-                if (getObjects(Cactus.class).isEmpty()) 
-                {
-                    createCactus();
-                }
-                int numberOfCacti = getObjects(Cactus.class).size();
-                
-                // Create a new cactus if there are less than two cacti on the screen
-                if (numberOfCacti < 2) {
-                    createCactus();
-                }
+                gameIsOver = false;
+                Greenfoot.setWorld(new MyWorld());
+            }
+        }
+        
+        if(gameIsOver) return;
+        
+        if (cactusTimer.millisElapsed() > 500) 
+        {
+            cactusTimer.mark();
+            if (getObjects(Cactus.class).isEmpty()) 
+            {
+                createCactus();
+            }
+            int numberOfCacti = getObjects(Cactus.class).size();
+            
+            // Create a new cactus if there are less than two cacti on the screen
+            if (numberOfCacti < 2) {
+                createCactus();
             }
         }
     }
