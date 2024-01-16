@@ -49,6 +49,7 @@ public class MyWorld extends World
     
     public void createCactus()
     {
+        removeObjects(getObjects(Cactus.class));
         Cactus cactus = new Cactus();
         int x = 600;
         int y = 190;
@@ -62,9 +63,13 @@ public class MyWorld extends World
         gameIsOver = true;
     }
     
-    public void act() {
-        if(!gameIsOver) {
-            if(cactusTimer.millisElapsed() > 3000){
+    public void act() 
+    {
+        if (!gameIsOver) 
+        {
+            // Only create a new cactus if there are no existing cacti
+            if (getObjects(Cactus.class).isEmpty() && cactusTimer.millisElapsed() > 400) 
+            {
                 cactusTimer.mark();
                 createCactus();
             }
