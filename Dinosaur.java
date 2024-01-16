@@ -62,8 +62,18 @@ public class Dinosaur extends Actor
         animateDinosaurRun();
         jump();
         touchCactus();
+        checkColision();
     }
     
+    private void checkColision()
+    {
+        Actor cactus = getOneIntersectingObject(Cactus.class);
+        if (cactus != null)
+        {
+            // Collision with cactus detected, trigger game-over logic
+            ((MyWorld)getWorld()).gameOver();
+        }
+    }
     private void jump()
     {
         if (Greenfoot.isKeyDown("up") && onGround())

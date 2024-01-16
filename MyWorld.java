@@ -49,7 +49,6 @@ public class MyWorld extends World
     
     public void createCactus()
     {
-        removeObjects(getObjects(Cactus.class));
         Cactus cactus = new Cactus();
         int x = 600;
         int y = 190;
@@ -59,7 +58,7 @@ public class MyWorld extends World
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over", 100);
-        addObject(gameOverLabel, 300, 200);
+        addObject(gameOverLabel, 300, 100);
         gameIsOver = true;
     }
     
@@ -67,11 +66,19 @@ public class MyWorld extends World
     {
         if (!gameIsOver) 
         {
-            // Only create a new cactus if there are no existing cacti
-            if (getObjects(Cactus.class).isEmpty() && cactusTimer.millisElapsed() > 400) 
+            if (cactusTimer.millisElapsed() > 1000) 
             {
                 cactusTimer.mark();
-                createCactus();
+                if (getObjects(Cactus.class).isEmpty()) 
+                {
+                    createCactus();
+                }
+                int numberOfCacti = getObjects(Cactus.class).size();
+                
+                // Create a new cactus if there are less than two cacti on the screen
+                if (numberOfCacti < 2) {
+                    createCactus();
+                }
             }
         }
     }
