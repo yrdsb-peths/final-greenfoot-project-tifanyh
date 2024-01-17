@@ -65,4 +65,9 @@ public class Cactus extends Actor
     {
         return getY() >= getWorld().getHeight() - GROUND_LEVEL;
     }
+    
+    public void setSpeed(int spd)
+    {
+        cactusSpeed = spd;
+    }
 }

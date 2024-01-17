@@ -11,10 +11,12 @@ public class MyWorld extends World
 {
     int level = 1;
     SimpleTimer cactusTimer = new SimpleTimer();
-    boolean gameIsOver = false;
     SimpleTimer scoreTimer = new SimpleTimer(); 
+    boolean gameIsOver = false;
     int score = 0;
-    
+    int cactusSpeed = 5;
+    GreenfootSound death = new GreenfootSound("dinosaurDeath.mp3");
+    GreenfootSound replay = new GreenfootSound("replay.mp3");
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -72,6 +74,7 @@ public class MyWorld extends World
         addObject(restartLabel, 300, 150);
         gameIsOver = true;
         cactusTimer.mark();
+        death.play();
     }
     
     public void act() 
@@ -82,6 +85,7 @@ public class MyWorld extends World
             {
                 gameIsOver = false;
                 Greenfoot.setWorld(new MyWorld());
+                replay.play();
             }
         }
         
@@ -111,7 +115,20 @@ public class MyWorld extends World
                 scoreTimer.mark();
                 score += 100; // Increase the score by 100
                 Label scoreLabel = new Label("Score: " + score, 30);
-                addObject(scoreLabel, 80, 20);
+                showText("Score: " + score, 80, 20);
+            }
+            
+            if (score > 500 && score <= 1000) 
+            {
+                cactusSpeed = 6;
+            } 
+            else if (score > 1000 && score <= 1500) 
+            {
+                cactusSpeed = 7;
+            } 
+            for (Cactus cactus : getObjects(Cactus.class)) 
+            {
+                cactus.setSpeed(cactusSpeed);
             }
         }
     }

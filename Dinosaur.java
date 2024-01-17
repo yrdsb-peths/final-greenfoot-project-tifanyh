@@ -24,6 +24,7 @@ public class Dinosaur extends Actor
     
     private int animationFrame = 0;
     private int animationDelay = 5; 
+    GreenfootSound jumpSound = new GreenfootSound("jumpSound.mp3");
     
     //Constructor
     public Dinosaur()
@@ -78,6 +79,7 @@ public class Dinosaur extends Actor
         if (Greenfoot.isKeyDown("up") && onGround())
         {
             ySpeed = -JUMP_STRENGTH;
+            jumpSound.play();
         }
 
         // Gravity effect
