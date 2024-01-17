@@ -12,6 +12,8 @@ public class MyWorld extends World
     int level = 1;
     SimpleTimer cactusTimer = new SimpleTimer();
     boolean gameIsOver = false;
+    SimpleTimer scoreTimer = new SimpleTimer(); 
+    int score = 0;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -95,14 +97,22 @@ public class MyWorld extends World
             int numberOfCacti = getObjects(Cactus.class).size();
             
             // Create a new cactus if there are less than two cacti on the screen
-            if (numberOfCacti < 2) {
+            if (numberOfCacti < 2) 
+            {
                 createCactus();
             }
+            
+            // Update the score every second
         }
-    }
-    
-    public void score()
-    {
-                
+        if(Greenfoot.isKeyDown("right"))
+        {
+            if (scoreTimer.millisElapsed() > 1000) 
+            {
+                scoreTimer.mark();
+                score += 100; // Increase the score by 100
+                Label scoreLabel = new Label("Score: " + score, 30);
+                addObject(scoreLabel, 80, 20);
+            }
+        }
     }
 }

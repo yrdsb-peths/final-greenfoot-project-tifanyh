@@ -12,6 +12,7 @@ public class Floor extends Actor
     int imageIndex = 0;
     int animationCounter = 0;
     int animationDelay = 4;
+    SimpleTimer scoreTimer = new SimpleTimer(); 
     
     /**
      * Act - do whatever the Floor wants to do. This method is called whenever
@@ -50,5 +51,6 @@ public class Floor extends Actor
     {
         // Add your action code here.
         animateFloor();
+        
     }
 }
