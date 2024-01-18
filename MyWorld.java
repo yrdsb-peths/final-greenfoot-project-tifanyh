@@ -91,6 +91,8 @@ public class MyWorld extends World
         
         if(gameIsOver) return;
         
+        //creates a cactus every 500 miliseconds only if the other cactus has left the screen
+        //So that the screen does not get crawded with cactui.
         if (cactusTimer.millisElapsed() > 500) 
         {
             cactusTimer.mark();
@@ -105,9 +107,10 @@ public class MyWorld extends World
             {
                 createCactus();
             }
-            
-            // Update the score every second
         }
+        
+        //Creates the score text when right arrow key is down so it only goes
+        //up if you keep moving
         if(Greenfoot.isKeyDown("right"))
         {
             if (scoreTimer.millisElapsed() > 1000) 

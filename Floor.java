@@ -30,6 +30,7 @@ public class Floor extends Actor
         animateFloor();
     }
     
+    //Animates the floor so that it keeps moving when right arrow key is down. 
     public void animateFloor()
     {
         if(Greenfoot.isKeyDown("right"))

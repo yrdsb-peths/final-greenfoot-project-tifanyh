@@ -9,8 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Cactus extends Actor
 {
     /**
-     * Act - do whatever the cactus wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Act - This is the cactus method. It generates the cacti randomizing 
+     * between 4 images using a simple timer to generate them.
+     * 
      */
     GreenfootImage[] cacti = new GreenfootImage[4];
     int cactusSpeed = 5;
@@ -39,11 +40,13 @@ public class Cactus extends Actor
         int x = getX();
         int y = getY();
         setLocation(x, y);
+        //moves the cactus if the donosaur moves as well so when the right arrow is pressed.
         if(Greenfoot.isKeyDown("right"))
         {
           move(-6); 
         }
         
+        //Uses "gravity" to set it to be on the floor.
         if (!onGround())
         {
             ySpeed += GRAVITY;
@@ -51,6 +54,7 @@ public class Cactus extends Actor
 
         setLocation(getX(), Math.min(getWorld().getHeight() - GROUND_LEVEL, getY() + ySpeed));
         
+        //Makes the cactus disapear once it reaches the end
         if (disappearCounter > 0) {
             disappearCounter--;
 

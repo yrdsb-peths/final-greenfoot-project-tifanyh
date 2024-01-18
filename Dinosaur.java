@@ -38,6 +38,7 @@ public class Dinosaur extends Actor
         setImage(idleRun[1]);
     }
     
+    //Animates the dinosaur and all its actions
     public void animateDinosaurRun()
     {
         if (Greenfoot.isKeyDown("right"))
@@ -57,7 +58,7 @@ public class Dinosaur extends Actor
         }
     }
 
-
+    //All the actions code. 
     public void act()
     {
         animateDinosaurRun();
@@ -74,6 +75,8 @@ public class Dinosaur extends Actor
             ((MyWorld)getWorld()).gameOver();
         }
     }
+    
+    //Makes the dinosaur jump.
     private void jump()
     {
         if (Greenfoot.isKeyDown("up") && onGround())
@@ -91,11 +94,13 @@ public class Dinosaur extends Actor
         setLocation(getX(), Math.min(getWorld().getHeight() - GROUND_LEVEL, getY() + ySpeed));
     }
     
+    //returns to the floor when jumps down.
     private boolean onGround()
     {
         return getY() >= getWorld().getHeight() - GROUND_LEVEL;
     }
     
+    //If the dinosaur touches the cactus then gameOver
     public void touchCactus()
     {
         if(isTouching(Cactus.class))
