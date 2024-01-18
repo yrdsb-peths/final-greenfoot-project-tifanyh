@@ -23,3 +23,8 @@ Consider using **Markdown** syntax to format the text in this file. [Markdown ba
 5. The longer you survive the higher score you get
 6. If you touch a cactus you die and it is game over
 7. To restart the game you press space
+
+**Arrays used**
+1. Dinosaur Idle
+2. Floor Idle
+3. Cactus idle
