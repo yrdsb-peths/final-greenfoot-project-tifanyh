@@ -57,7 +57,6 @@ public class MyWorld extends World
         int x = 600;
         int y = 190;
         addObject(cactus, x, y);
-        
     }
     
     public boolean isGameOver()
